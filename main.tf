@@ -18,7 +18,7 @@ resource "yandex_compute_instance" "platform" {
   resources {
     cores         = 1
     memory        = 1
-    core_fraction = 5
+    core_fraction = 20
   }
   boot_disk {
     initialize_params {
