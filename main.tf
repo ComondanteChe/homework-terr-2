@@ -60,6 +60,7 @@ data "yandex_compute_image" "ubuntu_db" {
 resource "yandex_compute_instance" "platform_db" {
   name        = var.vm_db_vpc_name
   platform_id = var.vm_db_platform
+  zone        = var.vm_db_default_zone
   resources {
     cores         = var.vm_db_cores
     memory        = var.vm_db_memory
