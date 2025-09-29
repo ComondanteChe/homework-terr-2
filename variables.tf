@@ -24,7 +24,7 @@ variable "default_cidr" {
 
 variable "vpc_name" {
   type        = string
-  default     = "develop"
+  default     = "netology-develop-platform-web"
   description = "VPC network & subnet name"
 }
 
@@ -60,13 +60,6 @@ variable "vm_web_image" {
   type        = string
   default     = "ubuntu-2004-lts"
   description = "OS image"
-  
-}
-
-variable "vm_web_name" {
-  type        = string
-  default     = "netology-develop-platform-web"
-  description = "VM name"
   
 }
 
