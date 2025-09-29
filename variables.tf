@@ -36,3 +36,43 @@ variable "vms_ssh_root_key" {
   default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfVKappDvBQ9kbqze6JrwUpNwdaS9/W8TH47whYi2ls administrator@Educational"
   description = "ssh-keygen -t ed25519"
 }
+
+variable "vm_web_cores" {
+  type        = number
+  default     = 1
+  description = "vCPU count"
+  
+}
+
+variable "vm_web_memory" {
+  type        = number
+  default     = 1
+  description = "RAM in GB"
+}
+
+variable "vm_web_core_fraction" {
+  type        = number
+  default     = 5
+  description = "CPU core fraction"
+}
+
+variable "vm_web_image" {
+  type        = string
+  default     = "ubuntu-2004-lts"
+  description = "OS image"
+  
+}
+
+variable "vm_web_name" {
+  type        = string
+  default     = "netology-develop-platform-web"
+  description = "VM name"
+  
+}
+
+variable "vm_web_platform" {
+  type        = string
+  default     = "standard-v3"
+  description = "VM platform"
+  
+}
