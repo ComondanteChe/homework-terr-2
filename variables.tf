@@ -39,7 +39,7 @@ variable "vms_ssh_root_key" {
 
 variable "vm_web_cores" {
   type        = number
-  default     = 1
+  default     = 2
   description = "vCPU count"
   
 }
@@ -52,7 +52,7 @@ variable "vm_web_memory" {
 
 variable "vm_web_core_fraction" {
   type        = number
-  default     = 5
+  default     = 20
   description = "CPU core fraction"
 }
 
