@@ -49,7 +49,7 @@ resource "yandex_compute_instance" "platform" {
 resource "yandex_vpc_subnet" "db" {
   name = var.vpc_name
   zone = var.vm_db_default_zone
-  network_id     = yandex_vpc_network.db.id
+  network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = var.default_cidr
 }
 
