@@ -46,7 +46,7 @@ resource "yandex_vpc_network" "db" {
   name = var.vm_db_vpc_name
 }
 
-resource "yandex_vpc_network" "db" {
+resource "yandex_vpc_subnet" "db" {
   name = var.vm_db_vpc_name
   zone = var.vm_db_default_zone
   network_id     = yandex_vpc_network.db.id
