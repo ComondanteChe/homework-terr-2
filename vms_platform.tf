@@ -1,13 +1,3 @@
-# variable "vm_db_cloud_id" {
-#   type        = string
-#   description = "https://cloud.yandex.ru/docs/resource-manager/operations/cloud/get-id"
-# }
-
-# variable "vm_db_folder_id" {
-#   type        = string
-#   description = "https://cloud.yandex.ru/docs/resource-manager/operations/folder/get-id"
-# }
-
 variable "vm_db_default_zone" {
   type        = string
   default     = "ru-central1-b"
@@ -24,15 +14,6 @@ variable "vm_db_vpc_name" {
   default     = "netology-develop-platform-db"
   description = "VPC network & subnet name"
 }
-
-
-###ssh vars
-
-# variable "vms_ssh_root_key" {
-#   type        = string
-#   default     = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIfVKappDvBQ9kbqze6JrwUpNwdaS9/W8TH47whYi2ls administrator@Educational"
-#   description = "ssh-keygen -t ed25519"
-# }
 
 variable "vm_db_cores" {
   type        = number
