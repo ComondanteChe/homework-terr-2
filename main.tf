@@ -42,9 +42,9 @@ resource "yandex_compute_instance" "platform" {
 
 
 
-# resource "yandex_vpc_network" "db" {
-#   name = var.vpc_name
-# }
+resource "yandex_vpc_network" "db" {
+  name = var.vpc_name
+}
 
 resource "yandex_vpc_subnet" "db" {
   name = var.vpc_name
