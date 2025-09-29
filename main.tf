@@ -14,7 +14,7 @@ data "yandex_compute_image" "ubuntu" {
 }
 resource "yandex_compute_instance" "platform" {
   name        = var.vm_web_name
-  platform_id = var.vm_platform_id
+  platform_id = var.vm_platform
   resources {
     cores         = var.vm_web_cores
     memory        = var.vm_web_memory
