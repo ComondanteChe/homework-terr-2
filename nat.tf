@@ -30,7 +30,7 @@ resource "yandex_vpc_gateway" "nat_gateway" {
 resource "yandex_vpc_route_table" "rt" {
   folder_id      = var.folder_id
   name       = "test-route-table"
-  network_id = "e9b6ctfsvhq3e8qanatt"
+  network_id = "default"
 
   static_route {
     destination_prefix = "0.0.0.0/0"
