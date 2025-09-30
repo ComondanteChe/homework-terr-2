@@ -1,10 +1,10 @@
 data "yandex_vpc_network" "net" {
-  folder_id = "var.folder_id"
-  name      = "dafault"
+  folder_id = var.folder_id
+  name      = "nat-network"
 }
 
 resource "yandex_vpc_subnet" "subnet" {
-  folder_id      = "var.folder_id"
+  folder_id      = var.folder_id
   name           = "nat-network"
   v4_cidr_blocks = ["10.20.30.0/24"]
   zone           = "ru-central1-a"
@@ -13,13 +13,13 @@ resource "yandex_vpc_subnet" "subnet" {
 }
 
 resource "yandex_vpc_gateway" "nat_gateway" {
-  folder_id      = "var.folder_id"
+  folder_id      = var.folder_id
   name = "test-gateway"
   shared_egress_gateway {}
 }
 
 resource "yandex_vpc_route_table" "rt" {
-  folder_id      = "var.folder_id"
+  folder_id      = var.folder_id
   name       = "test-route-table"
   network_id = "enpopegfid6hagvpbi4t"
 
