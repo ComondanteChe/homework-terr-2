@@ -1,6 +1,6 @@
 data "yandex_vpc_network" "net" {
   folder_id = "var.folder_id"
-  name      = "nat-network"
+  name      = "dafault"
 }
 
 resource "yandex_vpc_subnet" "subnet" {
