@@ -48,7 +48,7 @@ variable "vm_db_platform" {
   
 }
 
-variable "vm_web_name" {
+variable "vm_db_name" {
   type        = string
   default     = "netology-develop-platform-db"
   description = "VM name"
