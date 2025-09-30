@@ -34,7 +34,7 @@ resource "yandex_compute_instance" "platform" {
   }
 
   metadata = {
-    serial-port-enable = 1
+    serial-port-enable = var.vms_ssh_root_key["ssh"].serial-port-enable
     ssh-keys           = "${var.vms_ssh_root_key["ssh"].user}:${var.vms_ssh_root_key["ssh"].ssh-keys}"
   }
 
@@ -80,8 +80,8 @@ resource "yandex_compute_instance" "platform_db" {
   }
 
   metadata = {
-    serial-port-enable = 1
-    ssh-keys           = "ubuntu:${var.vms_ssh_root_key}"
+    serial-port-enable = var.vms_ssh_root_key["ssh"].serial-port-enable
+    ssh-keys           = "${var.vms_ssh_root_key["ssh"].user}:${var.vms_ssh_root_key["ssh"].ssh-keys}"
   }
 
 }
