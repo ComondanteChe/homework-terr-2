@@ -5,7 +5,7 @@ data "yandex_vpc_network" "net" {
 
 resource "yandex_vpc_subnet" "subnet" {
   folder_id      = var.folder_id
-  name           = "nat-network"
+  name           = "dafault"
   v4_cidr_blocks = ["10.0.1.0/24"]
   zone           = "ru-central1-a"
   network_id     = data.yandex_vpc_network.net.id
