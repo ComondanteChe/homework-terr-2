@@ -15,10 +15,10 @@ data "yandex_vpc_network" "net" {
 data "yandex_vpc_subnet" "subnet" {
   folder_id = var.folder_id
   name      = "dafault"
-  v4_cidr_blocks = var.default_cidr
-    zone           = var.default_zone
-    network_id     = data.yandex_vpc_network.net.id
-    route_table_id = yandex_vpc_route_table.rt.id
+#   v4_cidr_blocks = var.default_cidr
+#     zone           = var.default_zone
+#     network_id     = data.yandex_vpc_network.net.id
+#     route_table_id = yandex_vpc_route_table.rt.id
 }
 
 resource "yandex_vpc_gateway" "nat_gateway" {
