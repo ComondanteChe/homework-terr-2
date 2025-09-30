@@ -24,7 +24,7 @@ variable "default_cidr" {
 
 variable "vpc_name" {
   type        = string
-  default     = "netology-develop-platform-web"
+  default     = "dafault"
   description = "VPC network & subnet name"
 }
 
@@ -67,5 +67,12 @@ variable "vm_web_platform" {
   type        = string
   default     = "standard-v3"
   description = "VM platform"
+  
+}
+
+variable "vm_web_name" {
+  type        = string
+  default     = "netology-develop-platform-web"
+  description = "VM name"
   
 }
