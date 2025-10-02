@@ -1,36 +1,43 @@
-data "yandex_vpc_network" "net" {
+data "yandex_vpc_network" "net_web" {
   folder_id = var.folder_id
   name      = "dafault"
 }
 
-# # resource "yandex_vpc_subnet" "subnet" {
-# #   folder_id      = var.folder_id
-# #   name           = "dafault"
-# #   v4_cidr_blocks = ["10.0.1.0/24"]
-# #   zone           = "ru-central1-a"
-# #   network_id     = data.yandex_vpc_network.net.id
-# #   route_table_id = yandex_vpc_route_table.rt.id
-# # }
-
-# data "yandex_vpc_subnet" "subnet" {
-#   folder_id = var.folder_id
-#   name      = "dafault"
-#   route_table_id = yandex_vpc_route_table.rt.id
-# }
-
-resource "yandex_vpc_gateway" "nat_gateway" {
+resource "yandex_vpc_gateway" "nat_gateway_web" {
   folder_id      = var.folder_id
-  name = "test-gateway"
+  name = "gateway_web"
   shared_egress_gateway {}
 }
 
-resource "yandex_vpc_route_table" "rt" {
+resource "yandex_vpc_route_table" "rt_web" {
   folder_id      = var.folder_id
-  name       = "test-route-table"
-  network_id = data.yandex_vpc_network.net.id
+  name       = "route-table_web"
+  network_id = data.yandex_vpc_network.net_web.id
 
   static_route {
     destination_prefix = "0.0.0.0/0"
-    gateway_id         = yandex_vpc_gateway.nat_gateway.id
+    gateway_id         = yandex_vpc_gateway.nat_gateway_web.id
+  }
+}
+
+data "yandex_vpc_network" "net_db" {
+  folder_id = var.folder_id
+  name      = "dafault_db"
+}
+
+resource "yandex_vpc_gateway" "nat_gateway_db" {
+  folder_id      = var.folder_id
+  name = "gateway_db"
+  shared_egress_gateway {}
+}
+
+resource "yandex_vpc_route_table" "rt_db" {
+  folder_id      = var.folder_id
+  name       = "route-table_db"
+  network_id = data.yandex_vpc_network.net_db.id
+
+  static_route {
+    destination_prefix = "0.0.0.0/0"
+    gateway_id         = yandex_vpc_gateway.nat_gateway_db.id
   }
 }
