@@ -3,20 +3,20 @@ data "yandex_vpc_network" "net" {
   name      = "dafault"
 }
 
-# resource "yandex_vpc_subnet" "subnet" {
-#   folder_id      = var.folder_id
-#   name           = "dafault"
-#   v4_cidr_blocks = ["10.0.1.0/24"]
-#   zone           = "ru-central1-a"
-#   network_id     = data.yandex_vpc_network.net.id
+# # resource "yandex_vpc_subnet" "subnet" {
+# #   folder_id      = var.folder_id
+# #   name           = "dafault"
+# #   v4_cidr_blocks = ["10.0.1.0/24"]
+# #   zone           = "ru-central1-a"
+# #   network_id     = data.yandex_vpc_network.net.id
+# #   route_table_id = yandex_vpc_route_table.rt.id
+# # }
+
+# data "yandex_vpc_subnet" "subnet" {
+#   folder_id = var.folder_id
+#   name      = "dafault"
 #   route_table_id = yandex_vpc_route_table.rt.id
 # }
-
-data "yandex_vpc_subnet" "subnet" {
-  folder_id = var.folder_id
-  name      = "dafault"
-  route_table_id = yandex_vpc_route_table.rt.id
-}
 
 resource "yandex_vpc_gateway" "nat_gateway" {
   folder_id      = var.folder_id
