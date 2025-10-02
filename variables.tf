@@ -76,9 +76,3 @@ variable "vm_web_name" {
   description = "VM name"
   
 }
-
-variable "zone_web" {
-  type        = string
-  default     = "ru-central1-a"
-    
-}
