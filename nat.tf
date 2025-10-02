@@ -22,7 +22,7 @@ resource "yandex_vpc_route_table" "rt_web" {
 
 data "yandex_vpc_network" "net_db" {
   folder_id = var.folder_id
-  name      = "dafault-db"
+  name      = "default-db"
 }
 
 resource "yandex_vpc_gateway" "nat_gateway_db" {
