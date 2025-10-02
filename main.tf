@@ -6,7 +6,7 @@ resource "yandex_vpc_subnet" "develop" {
   zone           = var.default_zone
   network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = var.default_cidr
-  route_table_id = yandex_vpc_route_table.rt_web.id
+  # route_table_id = yandex_vpc_route_table.rt_web.id
 }
 
 
@@ -52,7 +52,7 @@ resource "yandex_vpc_subnet" "db" {
   zone = var.vm_db_default_zone
   network_id     = yandex_vpc_network.db.id
   v4_cidr_blocks = var.vm_db_default_cidr
-  route_table_id = yandex_vpc_route_table.rt_db.id
+  # route_table_id = yandex_vpc_route_table.rt_db.id
 }
 
 data "yandex_compute_image" "ubuntu_db" {
