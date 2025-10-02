@@ -54,9 +54,3 @@ variable "vm_db_name" {
   description = "VM name"
   
 }
-
-variable "zone_db" {
-  type        = string
-  default     = "ru-central1-b"
-  
-}
