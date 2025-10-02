@@ -22,12 +22,12 @@ resource "yandex_vpc_route_table" "rt_web" {
 
 data "yandex_vpc_network" "net_db" {
   folder_id = var.folder_id
-  name      = "dafault_db"
+  name      = "dafault-db"
 }
 
 resource "yandex_vpc_gateway" "nat_gateway_db" {
   folder_id      = var.folder_id
-  name = "gateway-db"
+  name = "gateway_db"
   shared_egress_gateway {}
 }
 
