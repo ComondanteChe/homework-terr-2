@@ -15,24 +15,24 @@ resource "yandex_vpc_gateway" "nat_gateway" {
   shared_egress_gateway {}
 }
 
-# resource "yandex_vpc_route_table" "rt_web" {
-#     folder_id      = var.folder_id
-#     name       = "route-table_web"
-#     network_id = data.yandex_vpc_network.net_web.id
+resource "yandex_vpc_route_table" "rt_web" {
+    folder_id      = var.folder_id
+    name       = "route-table_web"
+    network_id = data.yandex_vpc_network.net_web.id
   
-#   static_route {
-#     destination_prefix = "0.0.0.0/0"
-#     gateway_id         = yandex_vpc_gateway.nat_gateway.id
-#   }
-# }
+  static_route {
+    destination_prefix = "0.0.0.0/0"
+    gateway_id         = yandex_vpc_gateway.nat_gateway.id
+  }
+}
 
-# resource "yandex_vpc_route_table" "rt_db" {
-#     folder_id      = var.folder_id
-#     name       = "route-table_db"
-#     network_id = data.yandex_vpc_network.net_db.id
+resource "yandex_vpc_route_table" "rt_db" {
+    folder_id      = var.folder_id
+    name       = "route-table_db"
+    network_id = data.yandex_vpc_network.net_db.id
   
-#   static_route {
-#     destination_prefix = "0.0.0.0/0"
-#     gateway_id         = yandex_vpc_gateway.nat_gateway.id
-#   }
-# }
+  static_route {
+    destination_prefix = "0.0.0.0/0"
+    gateway_id         = yandex_vpc_gateway.nat_gateway.id
+  }
+}
