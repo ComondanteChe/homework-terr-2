@@ -52,6 +52,7 @@ resource "yandex_vpc_subnet" "db" {
   zone = var.vm_db_default_zone
   network_id     = yandex_vpc_network.db.id
   v4_cidr_blocks = var.vm_db_default_cidr
+  route_table_id = yandex_vpc_route_table.rt.id
 }
 
 data "yandex_compute_image" "ubuntu_db" {
