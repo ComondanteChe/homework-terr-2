@@ -27,7 +27,7 @@ data "yandex_vpc_network" "net_db" {
 
 resource "yandex_vpc_gateway" "nat_gateway_db" {
   folder_id      = var.folder_id
-  name = "gateway_db"
+  name = "gateway-db"
   shared_egress_gateway {}
 }
 
