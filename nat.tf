@@ -22,7 +22,7 @@ resource "yandex_vpc_route_table" "rt_web" {
   
   static_route {
     destination_prefix = "0.0.0.0/0"
-    gateway_id         = var.yandex_vpc_gateway.nat_gateway.id
+    gateway_id         = yandex_vpc_gateway.nat_gateway.id
   }
 }
 
@@ -33,7 +33,7 @@ resource "yandex_vpc_route_table" "rt_db" {
   
   static_route {
     destination_prefix = "0.0.0.0/0"
-    gateway_id         = var.yandex_vpc_gateway.nat_gateway.id
+    gateway_id         = yandex_vpc_gateway.nat_gateway.id
   }
 }
 
