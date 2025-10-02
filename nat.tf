@@ -7,6 +7,7 @@ resource "yandex_vpc_gateway" "nat_gateway_web" {
   folder_id      = var.folder_id
   name = "gateway_web"
   shared_egress_gateway {}
+  zone = var.zone_web
 }
 
 resource "yandex_vpc_route_table" "rt_web" {
@@ -29,6 +30,7 @@ resource "yandex_vpc_gateway" "nat_gateway_db" {
   folder_id      = var.folder_id
   name = "gateway_db"
   shared_egress_gateway {}
+  zone = var.zone_db
 }
 
 resource "yandex_vpc_route_table" "rt_db" {
