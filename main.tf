@@ -7,7 +7,6 @@ resource "yandex_vpc_subnet" "develop" {
   network_id     = yandex_vpc_network.develop.id
   v4_cidr_blocks = var.default_cidr
   route_table_id = yandex_vpc_route_table.rt.id
-  nat           = true
 }
 
 
